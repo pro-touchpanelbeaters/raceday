@@ -1,0 +1,32 @@
+@host = https://localhost:7080
+
+### Register participant
+POST {{host}}/api/auth/register
+Content-Type: application/json
+
+{
+  "firstName": "Demo",
+  "lastName": "Participant",
+  "email": "demo.participant@raceday.co.za",
+  "password": "Participant123!",
+  "phoneNumber": "0712345678",
+  "role": "Participant"
+}
+
+### Login
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "participant1@raceday.co.za",
+  "password": "Participant123!"
+}
+
+### Current profile
+GET {{host}}/api/users/me
+
+### Upcoming events
+GET {{host}}/api/events
+
+### My enrolments
+GET {{host}}/api/enrolments/my
